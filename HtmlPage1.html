@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIIG ULTIMATE | Terminal Access</title>
+    <style>
+        :root {
+            --neon: #bc13fe;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #eee;
+            font-family: 'Consolas', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid var(--neon);
+            background: #000;
+            box-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .terminal::before {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+                z-index: 2;
+                background-size: 100% 2px, 3px 100%;
+                pointer-events: none;
+            }
+
+        h1 {
+            color: var(--neon);
+            text-align: center;
+            letter-spacing: 15px;
+            text-shadow: 0 0 15px var(--neon);
+            margin: 0;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-header {
+            color: var(--neon);
+            border-bottom: 1px solid var(--neon);
+            margin: 40px 0 20px;
+            padding-bottom: 8px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .why-siig {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+            .why-siig li {
+                margin-bottom: 18px;
+                padding-left: 30px;
+                position: relative;
+                line-height: 1.5;
+            }
+
+                .why-siig li::before {
+                    content: ">>";
+                    position: absolute;
+                    left: 0;
+                    color: var(--neon);
+                    font-weight: bold;
+                }
+
+            .why-siig b {
+                color: #fff;
+            }
+
+        .modules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .module-item {
+            border: 1px solid #222;
+            padding: 20px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+            .module-item:hover {
+                border-color: var(--neon);
+                background: rgba(188, 19, 254, 0.08);
+                transform: scale(1.02);
+            }
+
+            .module-item b {
+                color: var(--neon);
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .module-item span {
+                color: #999;
+                font-size: 0.85rem;
+            }
+
+        .execution-box {
+            background: rgba(18, 18, 18, 0.5);
+            border: 1px dashed var(--neon);
+            padding: 25px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .cmd-line {
+            color: var(--neon);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .code-block {
+            background: #111;
+            padding: 10px;
+            border-left: 3px solid var(--neon);
+            margin: 10px 0;
+            display: block;
+            color: #bc13fe;
+        }
+
+        .btn-zone {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .btn {
+            border: 1px solid var(--neon);
+            padding: 18px 40px;
+            color: var(--neon);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: transparent;
+        }
+
+            .btn:hover {
+                background: var(--neon);
+                color: #000;
+                box-shadow: 0 0 30px var(--neon);
+            }
+
+        .btn-discord {
+            border-color: #5865F2;
+            color: #5865F2;
+        }
+
+            .btn-discord:hover {
+                background: #5865F2;
+                color: #fff;
+                box-shadow: 0 0 30px #5865F2;
+            }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <h1>SIIG ULTIMATE</h1>
+        <p style="text-align: center; color: #666; font-size: 0.9rem;">[ SYSTEM STATUS: ONLINE - VERSION 1.0 ]</p>
+
+        <div class="section-header">System Advantages</div>
+        <ul class="why-siig">
+            <li><b>Fast Execution:</b> Built with high-performance async requests.</li>
+            <li><b>(X-X) Security:</b> Key-protected access via community server.</li>
+            <li><b>Portable:</b> Lightweight Python script with no bloatware.</li>
+        </ul>
+
+        <div class="section-header">Core Modules</div>
+        <div class="modules">
+            <div class="module-item"><b>[01] SERVER CHECKER</b><span>Real-time token validation and permission scanning.</span></div>
+            <div class="module-item"><b>[02] CHANNEL SPAMMER</b><span>High-speed flood bypassing standard rate limits.</span></div>
+            <div class="module-item"><b>[03] SERVER NUKER</b><span>Full guild liquidation and massive reconstruction.</span></div>
+            <div class="module-item"><b>[04] MASS DM</b><span>Aggressive outreach engine for rapid advertising.</span></div>
+        </div>
+
+        <div class="section-header">Setup & Execution</div>
+        <div class="execution-box">
+            <p style="margin: 0 0 10px 0;">Required dependencies:</p>
+            <code class="code-block">
+                <span class="cmd-line">$</span>pip install httpx colorama asyncio
+            </code>
+            <p style="margin: 20px 0 10px 0;">To launch the main interface:</p>
+            <code class="code-block">
+                <span class="cmd-line">$</span>python siig_tool.py
+            </code>
+        </div>
+
+        <div class="btn-zone">
+            <a href="#" class="btn">Download Script</a>
+            <a href="https://discord.gg/RS3exwmgcq" target="_blank" class="btn btn-discord">Join Community</a>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; font-size: 0.85rem; color: #444; letter-spacing: 1px;">
+            (X-X) Awaiting Command Input<span class="blink">_</span>
+        </p>
+    </div>
+
+</body>
+</html>
